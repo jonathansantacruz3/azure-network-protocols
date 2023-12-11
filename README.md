@@ -36,9 +36,13 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h3>1. Creating the resources</h3>
 
+To start off, I logged into my Azure account and headed over to resource groups in order to create one to hold my virtual machines. For this project I created one Windows 10 pro (21H2) machine and a Linux (Ubuntu Server 20.04) machine. I made sure Azure created the Windows machine's virtual private network and subnet before creating the Ubuntu machine. This step was crucial to open the line for communication between them. For the Windows machine, I allowed port 3389 to be open to enable the remote desktop feature. In the Ubuntu machine, I enabled port 22 to enable the secure shell feature. After the creation of my resources, I verified that both machines were placed in the same virtual network. 
+
 
 
 <h3>2. Observe ICMP traffic</h3>
+
+Using the Windows machine's private IP address taken from my Azure Network Watcher, I connected to my Windows machine via Remote Desktop. I proceeded to downloading and installing Wireshark using my browser. Wireshark is a network protocol analyzer used to capture packets from a network connection. This is the application I utilized to observe what communications were being transmitted behind the scenes my own network connections. 
 
 <h3>3. Observe SSH traffic</h3>
 
