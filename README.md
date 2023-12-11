@@ -42,9 +42,22 @@ To start off, I logged into my Azure account and headed over to resource groups 
 
 <h3>2. Observe ICMP traffic</h3>
 
-Using the Windows machine's private IP address taken from my Azure Network Watcher, I connected to my Windows machine via Remote Desktop. I proceeded to downloading and installing Wireshark using my browser. Wireshark is a network protocol analyzer used to capture packets from a network connection. This is the application I utilized to observe what communications were being transmitted behind the scenes my own network connections. 
+Using the Windows machine's private IP address taken from my Azure Network Watcher, I connected to my Windows machine via Remote Desktop. I proceeded to downloading and installing Wireshark using my browser. Wireshark is a network protocol analyzer used to capture packets from a network connection. This is the application I utilized to observe what communications were being transmitted behind the scenes in my own network connections. 
+
+After wireshark was installed and running, I selected the Ethernet option and clicked on the shark fin icon in the top left corner of the app to input an Internet Control Message Protocol filter. A ping, comprised of ICMP messages, is the method used to measure the communication latency between networks or devices (nodes). An ICMP is essentially a packet with random data sent to a destination to communicate any errors to the source. 
+
+
+In this case, the ICMP messages will reflect in Wireshark and I was able to view the transmissions issued within the source and destination address. To view the messages, I opened up my WIndows Powershell command line and issed a Ping to my Ubuntu machine with its private IP address. 
+
+I was also able to observe ICMP traffic when I pinged a website address such as www.google.com
+
+To explore the network security groups feature, I initiated a perpetual nonstop ping using "ping IP address -t" in the command line. Once this was going I switched over to the VM's virtual firewall in Azure to set a new rule to block ICMP transmissions form anywhere. The NSG feature lets me set rules to allow or deny cerrtain protocols and port numbers. After I verified that the ICMP traffic has ceased, I enabled the rule once again to analyze the traffic once more and then stopped the endless incoming ICMP packets using "ctrl + c".  
+
+
 
 <h3>3. Observe SSH traffic</h3>
+
+
 
 <h3>4. Observe DHCP traffic</h3>
 
