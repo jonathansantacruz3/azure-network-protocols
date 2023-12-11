@@ -57,13 +57,45 @@ To explore the network security groups feature, I initiated a perpetual nonstop 
 
 <h3>3. Observe SSH traffic</h3>
 
+Secure Shell or SSH is basically a secure remote shell that is used for communication between nodes. This time I cleared out my filter in Wireshark and typed in SSH to filter for packets going through port 22. Another way to filter for ssh traffic is to use filter "tcp.port == 22".  I then opened up my Powershell terminal and opened up a connection to my Ubuntu machine through SSH. The format needed to make this connection in the command line is:
+
+ssh username@IPaddress
+
+Once the connection is made i was able to type in commands in the Linux machine and observe the traffic data within Wireshark. To exit the Linux machine, I simply typed in "exit" and pressed "enter".
+
 
 
 <h3>4. Observe DHCP traffic</h3>
 
+The next filter I applied was for the DHCP protocol. Dynamic Host Configuration Protocol or DHCP is a network management protocol that automatically assigns IP addresses and other communication parameters to devices connected to the network. From my Windows machine's command line I was able to issue a new Ip address using the following command: 
+
+ipconfig /renew 
+
+As the results came back I analyzed the activity going through Wireshark activated by the command. 
+
 <h3>5. Observe DNS traffic</h3>
 
+In this observation I filtered for DNS traffic within Wireshark. Domain Name Service or DNS is the system that converts website domain names (hostnames) into numerical values (IP address) so they can be found and loaded into your web browser. To achieve this I used the command line in Powershell and typed in the command: 
+
+nslookup www.google.com 
+
+Then another lookup for Disney:
+
+nslookup www.disney.com
+
+Another way you can filter DNS traffic in Wireshark is the following: 
+
+udp.port == 53
+
+
 <h3>6. Observe RDP traffic</h3>
+
+The last filter I applied to Wireshark was for RDP or Remote Desktop traffic. Remote desktop is a software or operating system feature that allows a user to access and control another device from a distance. I used the filter: 
+
+tcp.port == 3389
+
+The traffic spam for RDP is nonstop because the protocol displays a live stream from node to node. 
+
 
 
 
