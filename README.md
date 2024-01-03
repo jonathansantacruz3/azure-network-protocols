@@ -3,7 +3,7 @@
 </p>
 
 <h1>Analyzing Network Protocols utilizing Wireshark, Network Security Groups, VMs, and Remote Desktop</h1>
-In this tutorial, we insepct various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+In this tutorial, I inspect various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
 
 
 
